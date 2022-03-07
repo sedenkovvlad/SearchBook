@@ -7,13 +7,16 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 final class SearchCell: UITableViewCell {
     static let reuseId = "SearchCell"
     
     private let bookImage: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
+        image.layer.borderWidth = 1
+        image.layer.borderColor = #colorLiteral(red: 0.2352941176, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
+        image.clipsToBounds = true
         return image
     }()
     
@@ -21,6 +24,7 @@ final class SearchCell: UITableViewCell {
        let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.numberOfLines = 0
+        label.textColor = #colorLiteral(red: 0.2352941176, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
         return label
     }()
     
@@ -39,6 +43,14 @@ final class SearchCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configureCell(from book: VolumeInfo?) {
+        titleLabel.text = book?.title
+        authorLabel.text = book?.authors?.joined(separator: ",")
+        guard let bookUrl = book?.imageLinks?.smallThumbnail else { return }
+        guard let url = URL(string: bookUrl) else { return }
+        bookImage.sd_setImage(with: url, completed: nil)
+    }
 }
 
 //MARK: UI
@@ -55,9 +67,8 @@ extension SearchCell {
         
         
         NSLayoutConstraint.activate([
-            bookImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            bookImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             bookImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            bookImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             bookImage.heightAnchor.constraint(equalToConstant: 60),
             bookImage.widthAnchor.constraint(equalToConstant: 60)
         ])
@@ -72,7 +83,7 @@ extension SearchCell {
             authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             authorLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor, constant: 8),
             authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
 }
