@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		C258472B27D61BC400E13DEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258472A27D61BC400E13DEE /* AppDelegate.swift */; };
 		C258472D27D61BC400E13DEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258472C27D61BC400E13DEE /* SceneDelegate.swift */; };
-		C258472F27D61BC400E13DEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258472E27D61BC400E13DEE /* ViewController.swift */; };
 		C258473427D61BC400E13DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C258473327D61BC400E13DEE /* Assets.xcassets */; };
 		C258473727D61BC400E13DEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258473527D61BC400E13DEE /* LaunchScreen.storyboard */; };
 		C258474527D61E4700E13DEE /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474427D61E4700E13DEE /* BookResponse.swift */; };
 		C258474D27D6294400E13DEE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474C27D6294400E13DEE /* NetworkService.swift */; };
 		C258474F27D6295A00E13DEE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474E27D6295A00E13DEE /* API.swift */; };
 		C258475227D62A3D00E13DEE /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */; };
+		C258475427D62E6200E13DEE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475327D62E6200E13DEE /* SearchViewController.swift */; };
+		C258475727D62F2500E13DEE /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475627D62F2500E13DEE /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C258472727D61BC400E13DEE /* SearchBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258472A27D61BC400E13DEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C258472C27D61BC400E13DEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C258472E27D61BC400E13DEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C258473327D61BC400E13DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C258473627D61BC400E13DEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C258473827D61BC400E13DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		C258474C27D6294400E13DEE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C258474E27D6295A00E13DEE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		C258475327D62E6200E13DEE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C258475627D62F2500E13DEE /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,8 @@
 		C258474027D61C4900E13DEE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C258472E27D61BC400E13DEE /* ViewController.swift */,
+				C258475327D62E6200E13DEE /* SearchViewController.swift */,
+				C258475527D62F1500E13DEE /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				C258474E27D6295A00E13DEE /* API.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		C258475527D62F1500E13DEE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C258475627D62F2500E13DEE /* SearchCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C258475227D62A3D00E13DEE /* NetworkDataFetcher.swift in Sources */,
+				C258475727D62F2500E13DEE /* SearchCell.swift in Sources */,
+				C258475427D62E6200E13DEE /* SearchViewController.swift in Sources */,
 				C258474D27D6294400E13DEE /* NetworkService.swift in Sources */,
-				C258472F27D61BC400E13DEE /* ViewController.swift in Sources */,
 				C258472B27D61BC400E13DEE /* AppDelegate.swift in Sources */,
 				C258472D27D61BC400E13DEE /* SceneDelegate.swift in Sources */,
 				C258474F27D6295A00E13DEE /* API.swift in Sources */,
