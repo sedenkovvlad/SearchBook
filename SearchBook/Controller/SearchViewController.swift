@@ -37,7 +37,13 @@ extension SearchViewController: UITableViewDataSource {
 }
 //MARK: UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        let book = books[indexPath.row].volumeInfo
+        vc.book = book
+        navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 //MARK: UISearchBarDelegate

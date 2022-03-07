@@ -18,6 +18,7 @@
 		C258475427D62E6200E13DEE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475327D62E6200E13DEE /* SearchViewController.swift */; };
 		C258475727D62F2500E13DEE /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475627D62F2500E13DEE /* SearchCell.swift */; };
 		C258475A27D63E3100E13DEE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C258475927D63E3100E13DEE /* SDWebImage */; };
+		C258475C27D6554C00E13DEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475B27D6554C00E13DEE /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		C258475327D62E6200E13DEE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C258475627D62F2500E13DEE /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		C258475B27D6554C00E13DEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C258475327D62E6200E13DEE /* SearchViewController.swift */,
+				C258475B27D6554C00E13DEE /* DetailViewController.swift */,
 				C258475527D62F1500E13DEE /* Cell */,
 			);
 			path = Controller;
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C258475C27D6554C00E13DEE /* DetailViewController.swift in Sources */,
 				C258475227D62A3D00E13DEE /* NetworkDataFetcher.swift in Sources */,
 				C258475727D62F2500E13DEE /* SearchCell.swift in Sources */,
 				C258475427D62E6200E13DEE /* SearchViewController.swift in Sources */,
