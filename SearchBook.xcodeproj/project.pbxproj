@@ -13,6 +13,9 @@
 		C258473427D61BC400E13DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C258473327D61BC400E13DEE /* Assets.xcassets */; };
 		C258473727D61BC400E13DEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258473527D61BC400E13DEE /* LaunchScreen.storyboard */; };
 		C258474527D61E4700E13DEE /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474427D61E4700E13DEE /* BookResponse.swift */; };
+		C258474D27D6294400E13DEE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474C27D6294400E13DEE /* NetworkService.swift */; };
+		C258474F27D6295A00E13DEE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258474E27D6295A00E13DEE /* API.swift */; };
+		C258475227D62A3D00E13DEE /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C258473627D61BC400E13DEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C258473827D61BC400E13DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C258474427D61E4700E13DEE /* BookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
+		C258474C27D6294400E13DEE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C258474E27D6295A00E13DEE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 				C258473E27D61C3D00E13DEE /* Model */,
 				C258473F27D61C4300E13DEE /* View */,
 				C258474027D61C4900E13DEE /* Controller */,
+				C258474B27D6292200E13DEE /* Services */,
 				C258474127D61C5300E13DEE /* Supports */,
 			);
 			path = SearchBook;
@@ -97,6 +104,24 @@
 				C258473827D61BC400E13DEE /* Info.plist */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		C258474B27D6292200E13DEE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C258475127D62A3D00E13DEE /* NetworkDataFetcher.swift */,
+				C258474C27D6294400E13DEE /* NetworkService.swift */,
+				C258475027D6299800E13DEE /* API */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C258475027D6299800E13DEE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C258474E27D6295A00E13DEE /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C258475227D62A3D00E13DEE /* NetworkDataFetcher.swift in Sources */,
+				C258474D27D6294400E13DEE /* NetworkService.swift in Sources */,
 				C258472F27D61BC400E13DEE /* ViewController.swift in Sources */,
 				C258472B27D61BC400E13DEE /* AppDelegate.swift in Sources */,
 				C258472D27D61BC400E13DEE /* SceneDelegate.swift in Sources */,
+				C258474F27D6295A00E13DEE /* API.swift in Sources */,
 				C258474527D61E4700E13DEE /* BookResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
