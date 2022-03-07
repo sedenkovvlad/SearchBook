@@ -12,11 +12,12 @@ class SearchViewController: UIViewController {
     private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     private let tableView = UITableView()
     private var books = [Items]()
+    private var searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        fetchBook()
+        setupSearchBar()
     }
 }
 
@@ -34,14 +35,17 @@ extension SearchViewController: UITableViewDataSource {
         return cell
     }
 }
-
+//MARK: UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     
 }
 
-extension SearchViewController {
-    private func fetchBook() {
-        fetcher.fetchBook(search: "programming") { [weak self] books in
+//MARK: UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        self.fetcher.fetchBook(search: text) { [weak self] books in
             guard let self = self else { return }
             guard let books = books?.items else { return }
             self.books = books
@@ -49,9 +53,9 @@ extension SearchViewController {
                 self.tableView.reloadData()
             }
         }
-        
     }
 }
+
 
 //MARK: - UI
 extension SearchViewController {
@@ -62,5 +66,16 @@ extension SearchViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.reuseId)
+    }
+    
+    private func setupSearchBar() {
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        searchBar.delegate = self
+        searchBar.showsScopeBar = true
+        searchBar.placeholder = "Search books"
+        searchBar.barTintColor = .black
+        searchBar.tintColor = #colorLiteral(red: 0.2352941176, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
+        self.tableView.tableHeaderView = searchBar
     }
 }
